@@ -30,6 +30,13 @@ class Library {
     return book;
   }
 
+  deleteBookByID(id) {
+    this._books = this._books.filter(function (obj) {
+      return obj._id !== id;
+    });
+    return;
+  }
+
   increaseReservedBookId() {
     this._reservedBookId = this._reservedBookId + 1;
   }

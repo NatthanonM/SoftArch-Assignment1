@@ -37,6 +37,14 @@ app.post("/api/addbook", function (req, res, next) {
   res.send(addedBook);
 });
 
+app.delete("/api/deletebook", function (req, res, next) {
+  const { id } = req.body;
+
+  Library.deleteBookByID(id);
+  res.status(200);
+  res.send("success");
+});
+
 // Middleware will be trigger in order
 
 // middleware with an arity of 4 are considered
